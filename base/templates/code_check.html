@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+        Check Code xD
+
+        hits : {{ hits }}
+        <div class="form">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset id="codecheckform" class="">
+                    <legend>CodeCheck</legend>
+                    <div class="form-field">
+                        {{ form.language.label(class="form-label") }}
+                        {{ form.language(id="lang-choice") }}
+                    </div>
+                    <div class="form-field">
+                        {{ form.code.label(class="form-label") }}
+                        {{ form.code(id="form-code") }}
+                    </div>
+                </fieldset>
+                {{ form.submit(class="submit-btn") }}
+            </form>
+        </div>
+        <button onclick="TLN.append_line_numbers('form-code')"> NUMBERIFY! </button>
+    <button onclick="TLN.remove_line_numbers('form-code')"> UN-NUMBERIFY! </button>
+{% endblock %}
